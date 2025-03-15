@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 This function finds the first instance of a zero in the array, which is an empty space in our sudoku puzzle,
 and fills it with each possible number. This could be made a bit smarter by keeping some sort of list of the counts
@@ -73,9 +74,14 @@ def backtrack(P0):
     return False #if no puzzles lead to an answer, then it is unsolvable
 
 
-if __name__ == "__main__":
+def solve(puzzle):
     #The sudoku puzzle is represented as a 2D array, with 0's for blank spaces
-    puzzle = [[] for _ in range(9)]
+    for row in puzzle:
+        for cell in row:
+            if(cell < 0 or 9 < cell):
+                return False
+    return backtrack(puzzle)
+    '''puzzle = [[] for _ in range(9)]
 
     puzzle[0] = [0,0,3,7,0,6,0,4,0]
     puzzle[1] = [0,0,6,0,0,0,2,0,0]
@@ -86,9 +92,8 @@ if __name__ == "__main__":
     puzzle[6] = [0,4,0,0,0,0,8,9,1]
     puzzle[7] = [0,0,8,6,4,0,0,3,0]
     puzzle[8] = [3,0,7,0,5,8,4,0,6]
-
+    print(puzzle)
     result = backtrack(puzzle)
-
     #Prints the puzzle
     if(result != False):
         for i in range(9):
@@ -101,4 +106,4 @@ if __name__ == "__main__":
                 line += str(result[i][j]) + " "
             print(line)
     else:
-        print("Unsolvable")
+        print("Unsolvable")'''

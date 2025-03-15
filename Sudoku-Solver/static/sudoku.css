@@ -1,0 +1,14 @@
+.sudoku{
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+table{
+    tr:nth-child(3) td{border-bottom: 10px solid};
+    tr:nth-child(7) td{border-top: 10px solid};
+}
+tr{
+    td:nth-child(3){border-right: 10px solid};
+    td:nth-child(7){border-left: 10px solid};
+}
